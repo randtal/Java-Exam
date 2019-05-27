@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teksti Analüütika</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https:///cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <script th:src="@{js/home.js}"></script> 
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <form method="POST" id="text-form">
+                    <div class="form-group row">
+                        <label for="author" class="col-2 col-form-label">Autor</label>
+                        <div class="col-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-address-card"></i>
+                                    </div>
+                                </div>
+                                <input id="author" name="author" placeholder="Palun sisestage teksti autor!" type="text"
+                                    required="required" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="title" class="col-2 col-form-label">Pealkiri</label>
+                        <div class="col-10">
+                            <input id="title" name="title" placeholder="Palun sisestage teksi pealkiri!" type="text"
+                                required="required" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2">Kategooria</label>
+                        <div class="col-10">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input name="category" id="category_0" type="radio" class="custom-control-input"
+                                    value="politics">
+                                <label for="category_0" class="custom-control-label">Poliitika</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input name="category" id="category_1" type="radio" class="custom-control-input"
+                                    value="education">
+                                <label for="category_1" class="custom-control-label">Haridus</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input name="category" id="category_2" type="radio" class="custom-control-input"
+                                    value="culture">
+                                <label for="category_2" class="custom-control-label">Kultuur</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input name="category" id="category_3" type="radio" class="custom-control-input"
+                                    value="entertainment">
+                                <label for="category_3" class="custom-control-label">Meelelahutus</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="text" class="col-2 col-form-label">Tekst</label>
+                        <div class="col-10">
+                            <textarea id="text" name="text" cols="40" rows="5" required="required"
+                                class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-2 col-10">
+                            <button name="submit" type="submit" class="btn btn-primary">Saada</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <table id="text-table" class="stripe">
+
+                    <thead>
+                            <th>Pealkiri</th>
+                            <th>Autor</th>
+                            <th>Kategooria</th>
+                            <th>Tekst</th>
+                            <th>Unikaalseid sõnu</th>
+                            <th>Sõnade sagedus</th>
+                            <th>Tähtede sagedus</th>
+                            <th>Täpitähed alguses</th>
+                    </thead>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
